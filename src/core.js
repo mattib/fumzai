@@ -1,4 +1,4 @@
-var FUMZAI_VERSION = "0.2.0";
+var FUMZAI_VERSION = "0.2.1";
 console.warn(`[FumzAI v${FUMZAI_VERSION}] Core script injected into MAIN world!`);
 window.FumzAI = window.FumzAI || {
     version: FUMZAI_VERSION,
