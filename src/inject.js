@@ -14,6 +14,7 @@ window.fetch = async function(...args) {
     const provider = window.FumzAI.providers.find(p => p.shouldIntercept(urlString));
 
     if (provider) {
+        console.warn(`[FumzAI] Intercepted fetch by ${provider.name}:`, urlString);
         try {
             let bodyText = null;
             let isRequestObj = false;
