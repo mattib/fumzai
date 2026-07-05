@@ -10,7 +10,9 @@ window.fetch = async function(...args) {
     // MVP Hardcoded curfew: 23:00 to 05:00
     const now = new Date();
     const hours = now.getHours();
-    const isCurfew = hours >= 23 || hours < 5;
+    
+    // Check if curfew is active, OR if the user manually forced it via the DevTools console
+    const isCurfew = (hours >= 23 || hours < 5) || (window.localStorage && window.localStorage.getItem('fumzai_force_curfew') === 'true');
 
     if (isCurfew) {
         // Very basic intercept for ChatGPT/Claude endpoints
