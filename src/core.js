@@ -1,3 +1,4 @@
+console.log("[FumzAI] Core script injected into MAIN world!");
 window.FumzAI = window.FumzAI || {
     providers: [],
     log: function(...args) {
