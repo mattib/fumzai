@@ -1,4 +1,4 @@
-var FUMZAI_VERSION = "0.1.5";
+var FUMZAI_VERSION = "0.1.6";
 console.warn(`[FumzAI v${FUMZAI_VERSION}] Core script injected into MAIN world!`);
 window.FumzAI = window.FumzAI || {
     version: FUMZAI_VERSION,
@@ -9,7 +9,17 @@ window.FumzAI = window.FumzAI || {
     isCurfewActive: function() {
         const now = new Date();
         const hours = now.getHours();
-        // Check local time (23:00-05:00) OR localStorage override for testing
-        return (hours >= 23 || hours < 5) || (window.localStorage && window.localStorage.getItem('fumzai_force_curfew') === 'true');
+        
+        let lsFlag = null;
+        try {
+            lsFlag = window.localStorage ? window.localStorage.getItem('fumzai_force_curfew') : null;
+        } catch(e) {}
+        
+        const isUrlTest = window.location.search.includes('fumzai_test=1');
+        
+        const active = (hours >= 23 || hours < 5) || (lsFlag === 'true') || isUrlTest;
+        window.FumzAI.log(`Checking curfew: hours=${hours}, lsFlag=${lsFlag}, urlTest=${isUrlTest} -> ACTIVE=${active}`);
+        
+        return active;
     }
 };
