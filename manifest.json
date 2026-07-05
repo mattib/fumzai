@@ -2,29 +2,22 @@
   "manifest_version": 3,
   "name": "FumzAI",
   "version": "0.1.0",
-  "description": "Your late-night AI bouncer.",
-  "permissions": ["storage"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  },
+  "description": "The late-night bouncer for AI tools.",
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
         "*://chatgpt.com/*",
         "*://claude.ai/*"
       ],
-      "js": ["src/content.js"],
-      "run_at": "document_start"
-    },
-    {
-      "matches": [
-        "*://chatgpt.com/*",
-        "*://claude.ai/*"
+      "js": [
+        "src/core.js",
+        "src/providers/chatgpt.js",
+        "src/providers/claude.js",
+        "src/inject.js"
       ],
-      "js": ["src/inject.js"],
       "run_at": "document_start",
       "world": "MAIN"
     }
