@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FumzAI",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "The late-night bouncer for AI tools.",
   "icons": {
     "16": "assets/icon16.jpg",
