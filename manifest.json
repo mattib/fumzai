@@ -1,28 +1,12 @@
 {
   "manifest_version": 3,
   "name": "FumzAI",
-  "version": "0.2.0",
+  "version": "0.1.7",
   "description": "The late-night bouncer for AI tools.",
   "permissions": [
     "storage"
   ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "FumzAI Settings"
-  },
   "content_scripts": [
-    {
-      "matches": [
-        "*://*.chatgpt.com/*",
-        "*://chatgpt.com/*",
-        "*://chat.openai.com/*",
-        "*://claude.ai/*"
-      ],
-      "js": [
-        "src/content.js"
-      ],
-      "run_at": "document_start"
-    },
     {
       "matches": [
         "*://*.chatgpt.com/*",
