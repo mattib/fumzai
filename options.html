@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FumzAI Setup</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #121212; color: #eee; max-width: 600px; margin: 40px auto; padding: 20px; }
+    h1 { color: #10a37f; }
+    .card { background: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    .row { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: 500; }
+    input[type="time"], select { width: 100%; padding: 10px; background: #2a2a2a; border: 1px solid #444; color: white; border-radius: 4px; box-sizing: border-box; }
+    .links a { color: #10a37f; text-decoration: none; margin-right: 15px; }
+    .links a:hover { text-decoration: underline; }
+    button#save { background: #10a37f; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+    button#save:hover { background: #0e8c6c; }
+    .status { margin-left: 15px; color: #10a37f; display: none; }
+  </style>
+</head>
+<body>
+  <h1>💤 FumzAI Setup</h1>
+  
+  <div class="card">
+    <h3>Curfew Schedule</h3>
+    <div class="row">
+      <label for="start">Wind-Down Time (Curfew Starts)</label>
+      <input type="time" id="start" value="23:00">
+    </div>
+    <div class="row">
+      <label for="end">Wake-Up Time (Curfew Ends)</label>
+      <input type="time" id="end" value="05:00">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Bouncer Persona</h3>
+    <div class="row">
+      <label for="personality">How should the bouncer talk to you?</label>
+      <select id="personality">
+        <option value="strict">Strict Drill Sergeant</option>
+        <option value="gentle">Gentle Parent</option>
+        <option value="philosopher">Disappointed Philosopher</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <button id="save">Save Settings</button>
+    <span id="status" class="status">Saved!</span>
+  </div>
+
+  <div class="card" style="margin-top: 40px; text-align: center;">
+    <div class="links">
+      <a href="#" id="coffee">☕ Buy me a coffee</a>
+      <a href="#" id="feedback">💬 Leave Feedback</a>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
