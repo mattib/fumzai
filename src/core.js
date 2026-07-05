@@ -1,10 +1,10 @@
-const FUMZAI_VERSION = "0.1.1";
-console.log(`[FumzAI v${FUMZAI_VERSION}] Core script injected into MAIN world!`);
+const FUMZAI_VERSION = "0.1.2";
+console.warn(`[FumzAI v${FUMZAI_VERSION}] Core script injected into MAIN world!`);
 window.FumzAI = window.FumzAI || {
     version: FUMZAI_VERSION,
     providers: [],
     log: function(...args) {
-        console.log(`[FumzAI v${FUMZAI_VERSION}]`, ...args);
+        console.warn(`[FumzAI v${FUMZAI_VERSION}]`, ...args);
     },
     isCurfewActive: function() {
         const now = new Date();
